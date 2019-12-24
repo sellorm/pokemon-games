@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  font-family: sans-serif;
+}
+</style>
+</head>
+<body>
+<h1 style="color:green">Flynn and Dad's Pokemon Quiz</h1>
+<img src="images/pokemon.jpg" width="50%">
+<a href="#start" style="color:orange" onclick="alert('hi flynn')">Start</a>
+<form>
+
+<h2>Question 1: What is your type?</h2>
+<input type="radio" id="ptype" name="ptype" value="fire">Fire<br>
+<input type="radio" id="ptype" name="ptype" value="ground">Ground<br>
+<input type="radio" id="ptype" name="ptype" value="rock">Rock<br>
+<input type="radio" id="ptype" name="ptype" value="water">Water<br>
+<input type="radio" id="ptype" name="ptype" value="poison">Poison<br>
+<input type="radio" id="ptype" name="ptype" value="grass">Grass<br>
+<input type="radio" id="ptype" name="ptype" value="flying">Flying<br>
+<input type="radio" id="ptype" name="ptype" value="dragon">Dragon<br>
+<input type="radio" id="ptype" name="ptype" value="fairy">Fairy<br>
+<input type="radio" id="ptype" name="ptype" value="psychic">Psychic<br>
+<input type="radio" id="ptype" name="ptype" value="normal">Normal<br>
+<input type="radio" id="ptype" name="ptype" value="electric">Electric<br>
+<input type="radio" id="ptype" name="ptype" value="ice">Ice<br>
+<input type="radio" id="ptype" name="ptype" value="fighting">Fighting<br>
+<input type="radio" id="ptype" name="ptype" value="dark">Dark<br>
+<input type="radio" id="ptype" name="ptype" value="steel">Steel<br>
+<input type="radio" id="ptype" name="ptype" value="bug">Bug<br>
+<input type="radio" id="ptype" name="ptype" value="ghost">Ghost<br>
+
+<h2>Question 2: What region do you come from?</h2>
+<input type="radio" id="region" name="region" value="kanto">Kanto<br>
+<input type="radio" id="region" name="region" value="hoenn">Hoenn<br>
+<input type="radio" id="region" name="region" value="kalos">Kalos<br>
+
+
+
+<script>
+function get_pokemon(){
+  console.log("function start")
+  var list_of_pokemon = [
+    {type: "fire", region: "kanto", name: "Charmander"},
+    {type: "fire", region: "hoenn", name: "Torchic"},
+    {type: "fire", region: "kalos", name: "Fennekin"},
+    {type: "ground", region: "kanto", name: "Geodude"},
+    {type: "ground", region: "hoenn", name: "Geodude"},
+    {type: "ground", region: "kalos", name: "Golett"},
+    {type: "rock", region: "kanto", name: "Golem"},
+    {type: "rock", region: "hoenn", name: "Sableye"},
+    {type: "rock", region: "kalos", name: "Barbaracle"},
+    {type: "water", region: "kanto", name: "Froakie"},
+    {type: "water", region: "hoenn", name: "Mudkip"},
+    {type: "water", region: "kalos", name: "Squirtle"},
+    {type: "poison", region: "kanto", name: "Ekans"},
+    {type: "poison", region: "hoenn", name: "Dustox"},
+    {type: "poison", region: "kalos", name: "Toxicroak"},
+    {type: "grass", region: "kanto", name: "Bulbasaur"},
+    {type: "grass", region: "hoenn", name: "Treecko"},
+    {type: "grass", region: "kalos", name: "Chespin"},
+    {type: "flying", region: "kanto", name: "Golbat"},
+    {type: "flying", region: "hoenn", name: "Pelipper"},
+    {type: "flying", region: "kalos", name: "Noivern"},
+    {type: "dragon", region: "kanto", name: "Gyarados"},
+    {type: "dragon", region: "hoenn", name: "Latios"},
+    {type: "dragon", region: "kalos", name: "Salamence"},
+    {type: "fairy", region: "kanto", name: "Jigglypuff"},
+    {type: "fairy", region: "hoenn", name: "Ralts"},
+    {type: "fairy", region: "kalos", name: "Spritzee"},
+    {type: "psychic", region: "kanto", name: "Mew"},
+    {type: "psychic", region: "hoenn", name: "Gardevoir"},
+    {type: "psychic", region: "kalos", name: "Mime-Jr"},
+    {type: "normal", region: "kanto", name: "Eevee"},
+    {type: "normal", region: "hoenn", name: "Zigzagoon"},
+    {type: "normal", region: "kalos", name: "Bunnelby"},
+    {type: "electric", region: "kanto", name: "Pikachu"},
+    {type: "electric", region: "hoenn", name: "Chinchou"},
+    {type: "electric", region: "kalos", name: "Ampharos"},
+    {type: "ice", region: "kanto", name: "Dewgong"},
+    {type: "ice", region: "hoenn", name: "Sealeo"},
+    {type: "ice", region: "kalos", name: "Cubchoo"},
+    {type: "fighting", region: "kanto", name: "Machop"},
+    {type: "fighting", region: "hoenn", name: "Blaziken"},
+    {type: "fighting", region: "kalos", name: "Mienfoo"},
+    {type: "dark", region: "kanto", name: "Rattata"},
+    {type: "dark", region: "hoenn", name: "Sableye"},
+    {type: "dark", region: "kalos", name: "Umbreon"},
+    {type: "steel", region: "kanto", name: "Metang"},
+    {type: "steel", region: "hoenn", name: "Magnemite"},
+    {type: "steel", region: "kalos", name: "Honedge"},
+    {type: "bug", region: "kanto", name: "Caterpie"},
+    {type: "bug", region: "hoenn", name: "Nincada"},
+    {type: "bug", region: "kalos", name: "Ledyba"},
+    {type: "ghost", region: "kanto", name: "Gastly"},
+    {type: "ghost", region: "hoenn", name: "Dusclops"},
+    {type: "ghost", region: "kalos", name: "Banette"}
+  ];
+  function pokemon_search(item, index) {
+    // var ptype = document.getElementById('ptype').value
+    var ptype = document.querySelector('input[name="ptype"]:checked').value;
+    // var region = document.getElementById('region').value
+    var region = document.querySelector('input[name="region"]:checked').value;
+    if (item["type"] === ptype && item["region"] === region){
+      console.log(item);
+      document.getElementById("answer").innerHTML = "<h1>You are " + item["name"] + "!</h1>";
+      document.getElementById("pokepic").innerHTML = "<img src='images/icons/" + item["name"].toLowerCase() + ".png' width='128px'>";
+    }
+  }
+  // console.log(list_of_pokemon.forEach(pokemon_search))
+  //var pokemon = list_of_pokemon.forEach(pokemon_search)
+  list_of_pokemon.forEach(pokemon_search)
+  //return pokemon;
+}
+function get_pokemon2(){
+  var list_of_pokemon = ["Charmandar", "Mudkip", "Chimchar", "Tepig", "Fennikin", "Chickoreta", "Panchum", "Pidgey", "Eevee", "Pikachu"];
+  var pokemon = list_of_pokemon[Math.floor(Math.random()*list_of_pokemon.length)];
+  return pokemon;
+}
+</script>
+<a name="end"></a>
+<h2><a href="#end" onclick="get_pokemon()" id="submit">Which Pokemon am I?</a></h2>
+
+<div id="answer"></div>
+<div id="pokepic"></div>
+
+
+
+</body>
+</html>
