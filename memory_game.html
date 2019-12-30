@@ -11,6 +11,7 @@ body {
 </head>
 <body onload="arrange_pokemon()">
 <h1 style="color:green">Flynn and Dad's Pokemon Memory Game</h1>
+<a href="index.html">home</a>
 <img src="images/pokemon.jpg" width="25%">
 
 <table border=1>
@@ -87,20 +88,13 @@ function flip_pokemon(cellid){
     last_flipped = null;
   }
 
-  console.log("last flip: " + last_flipped + " - This flip: " + cellid);
-  if (last_flipped != null){
-  if (randomised_pokemon[last_flipped]["name"] === randomised_pokemon[cellid]["name"]){
-    console.log("Match found!");
-    randomised_pokemon[cellid]["state"] = 1;
-    randomised_pokemon[last_flipped]["state"] = 1;
-  }
-}
-  var updated_html = "<img src='images/icons/" + randomised_pokemon[cellid]["name"] + ".png' width=128px>";
-  document.getElementById("cell"+cellid).innerHTML = updated_html;
-  num_flipped = num_flipped + 1;
-  last_flipped = cellid;
-}
-</script>
+  console.log("last flip: " + last_flipped + " - This flip: " + cellid); if
+  (last_flipped != null){ if (randomised_pokemon[last_flipped]["name"] ===
+  randomised_pokemon[cellid]["name"]){ console.log("Match found!");
+  randomised_pokemon[cellid]["state"] = 1;
+  randomised_pokemon[last_flipped]["state"] = 1; } } var updated_html = "<img src='images/icons/" + randomised_pokemon[cellid]["name"] + ".png' width=128px>"; document.getElementById("cell"+cellid).innerHTML = updated_html;
+  num_flipped = num_flipped + 1; last_flipped = cellid; }
+  </script>
 <a href="memory_game.html">New Game</a>
 </body>
 </html>
